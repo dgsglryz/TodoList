@@ -37,6 +37,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="8NG-kw-bxX" kind="presentation" id="XwQ-7u-cHY"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IWm-sd-1sH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -130,7 +133,11 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="yJr-XO-YwV">
-                                                    <rect key="frame" x="0.0" y="21" width="393" height="216"/>
+                                                    <rect key="frame" x="0.0" y="21.000000000000014" width="393" height="216.33333333333337"/>
+                                                    <connections>
+                                                        <action selector="datePickerChanged:" destination="8NG-kw-bxX" eventType="primaryActionTriggered" id="I7Q-oB-thE"/>
+                                                        <action selector="datePickerValueChanged:" destination="8NG-kw-bxX" eventType="valueChanged" id="XWx-DL-x3W"/>
+                                                    </connections>
                                                 </datePicker>
                                             </subviews>
                                             <constraints>
@@ -180,6 +187,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="Lr7-jn-yAI">
                             <connections>
+                                <action selector="saveButtonTapped:" destination="8NG-kw-bxX" id="LB0-NE-yoM"/>
                                 <segue destination="1eA-5y-BjG" kind="unwind" identifier="saveUnwind" unwindAction="unwindToToDoListWithSegue:" id="S9N-g1-LSJ"/>
                             </connections>
                         </barButtonItem>
@@ -231,6 +239,9 @@
             <point key="canvasLocation" x="-1145" y="42"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="XwQ-7u-cHY"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="checkmark.circle.fill" catalog="system" width="128" height="123"/>
         <systemColor name="labelColor">
