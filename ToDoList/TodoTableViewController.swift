@@ -46,16 +46,16 @@ class TodoTableViewController: UITableViewController {
   ToDoDetailTableViewController? {
     let detailController = ToDoDetailTableViewController(coder: coder)
      
-    guard let cell = sender as? UITableViewCell,​        let indexPath = tableView.indexPath(for: cell) else {
-      // if sender is the add button, return an empty controller
-      return detailController
-    }
+    guard let cell = sender as? UITableViewCell,        let indexPath = tableView.indexPath(for: cell) else {
+            // if sender is the add button, return an empty controller
+            return detailController
+        }
      
-    tableView.deselectRow(at: indexPath, animated: true)
+        tableView.deselectRow(at: indexPath, animated: true)
      
-    detailController?.toDo = toDos[indexPath.row]
+        detailController?.toDo = toDos[indexPath.row]
      
-    return detailController
+        return detailController
   }
   
   override func tableView(_ tableView: UITableView,
@@ -65,7 +65,8 @@ class TodoTableViewController: UITableViewController {
   
   override func tableView(_ tableView: UITableView, cellForRowAt
                           indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoCellIdentifier", for: indexPath)
+    let cell = tableView.dequeueReusableCell(withIdentifier:
+       "ToDoCellIdentifier", for: indexPath) as! ToDoCell
     let toDo = toDos[indexPath.row]
     var content = cell.defaultContentConfiguration()
     content.text = toDo.title

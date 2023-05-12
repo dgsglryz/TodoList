@@ -38,7 +38,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="8NG-kw-bxX" kind="presentation" id="XwQ-7u-cHY"/>
+                        <segue destination="5qD-LX-ZtF" kind="presentation" id="gwm-7F-7YH"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IWm-sd-1sH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -235,12 +235,25 @@
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rbg-vY-SN3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="oKL-3w-NRI">
+                    <rect key="frame" x="0.0" y="0.0" width="73.666666666666671" height="34"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Button" image="checkmark.circle.fill" catalog="system"/>
+                    <state key="selected" image="checkmark.circle.fill" catalog="system">
+                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="24"/>
+                    </state>
+                    <connections>
+                        <action selector="toggleIsComplete:" destination="8NG-kw-bxX" eventType="touchUpInside" id="R95-I0-Shs"/>
+                    </connections>
+                </button>
             </objects>
             <point key="canvasLocation" x="-1145" y="42"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="XwQ-7u-cHY"/>
+        <segue reference="XUQ-f1-8rA"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="checkmark.circle.fill" catalog="system" width="128" height="123"/>
