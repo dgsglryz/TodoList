@@ -45,7 +45,7 @@
         <!--New To-Do-->
         <scene sceneID="ZVZ-24-xYw">
             <objects>
-                <tableViewController id="8NG-kw-bxX" sceneMemberID="viewController">
+                <tableViewController id="8NG-kw-bxX" customClass="ToDoDetailTableViewController" customModule="ToDoList" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="DSe-fc-Mh6">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -68,11 +68,18 @@
                                                     <state key="selected" image="checkmark.circle.fill" catalog="system">
                                                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="24"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="toggleIsComplete:" destination="8NG-kw-bxX" eventType="touchUpInside" id="zEU-UO-gjK"/>
+                                                    </connections>
                                                 </button>
                                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Remind me to..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="izH-3g-fV7">
                                                     <rect key="frame" x="73.666666666666657" y="5" width="321.33333333333337" height="34"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="returnPressed:" destination="8NG-kw-bxX" eventType="primaryActionTriggered" id="fxG-gi-u0s"/>
+                                                        <action selector="textEditingChanged:" destination="8NG-kw-bxX" eventType="editingChanged" id="WtF-ql-C0d"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -123,7 +130,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="yJr-XO-YwV">
-                                                    <rect key="frame" x="0.0" y="21.000000000000014" width="393" height="216.33333333333337"/>
+                                                    <rect key="frame" x="0.0" y="21" width="393" height="216"/>
                                                 </datePicker>
                                             </subviews>
                                             <constraints>
@@ -138,12 +145,23 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Notes" id="Lid-lN-n7k">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="ejb-Cb-XOU">
-                                        <rect key="frame" x="0.0" y="471.9999942779541" width="393" height="43.666667938232422"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="200" id="ejb-Cb-XOU">
+                                        <rect key="frame" x="0.0" y="471.9999942779541" width="393" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ejb-Cb-XOU" id="UCz-Q7-fUU">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="5C3-B6-OrC">
+                                                    <rect key="frame" x="20" y="11" width="353" height="178"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                    <color key="textColor" systemColor="labelColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -166,6 +184,14 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="dueDateDatePicker" destination="yJr-XO-YwV" id="9Ks-lq-MkY"/>
+                        <outlet property="dueDateLabel" destination="fkB-Jy-Ocs" id="bwM-lQ-FCk"/>
+                        <outlet property="isCompleteButton" destination="0aU-Cv-Zl8" id="u57-qd-8Kl"/>
+                        <outlet property="notesTextView" destination="5C3-B6-OrC" id="0VT-i6-7cj"/>
+                        <outlet property="saveButton" destination="Lr7-jn-yAI" id="DE9-ek-efG"/>
+                        <outlet property="titleTextField" destination="izH-3g-fV7" id="0HK-2o-Lg1"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g19-Tv-vVZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="1eA-5y-BjG" userLabel="Exit" sceneMemberID="exit"/>
@@ -207,6 +233,9 @@
     </scenes>
     <resources>
         <image name="checkmark.circle.fill" catalog="system" width="128" height="123"/>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

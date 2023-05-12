@@ -15,6 +15,7 @@
 		A12BF1CB2A0D9362002AF767 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A12BF1C92A0D9362002AF767 /* LaunchScreen.storyboard */; };
 		A12BF1D32A0D9B35002AF767 /* ToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12BF1D22A0D9B35002AF767 /* ToDo.swift */; };
 		A12BF1D52A0D9CB8002AF767 /* TodoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12BF1D42A0D9CB8002AF767 /* TodoTableViewController.swift */; };
+		A16297542A0EA039006BB1EC /* ToDoDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16297532A0EA039006BB1EC /* ToDoDetailTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		A12BF1CC2A0D9362002AF767 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A12BF1D22A0D9B35002AF767 /* ToDo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDo.swift; sourceTree = "<group>"; };
 		A12BF1D42A0D9CB8002AF767 /* TodoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTableViewController.swift; sourceTree = "<group>"; };
+		A16297532A0EA039006BB1EC /* ToDoDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoDetailTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				A12BF1C02A0D9361002AF767 /* SceneDelegate.swift */,
 				A12BF1C22A0D9361002AF767 /* ViewController.swift */,
 				A12BF1C42A0D9361002AF767 /* Main.storyboard */,
+				A16297532A0EA039006BB1EC /* ToDoDetailTableViewController.swift */,
 				A12BF1D42A0D9CB8002AF767 /* TodoTableViewController.swift */,
 				A12BF1D22A0D9B35002AF767 /* ToDo.swift */,
 				A12BF1C72A0D9362002AF767 /* Assets.xcassets */,
@@ -144,6 +147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A16297542A0EA039006BB1EC /* ToDoDetailTableViewController.swift in Sources */,
 				A12BF1C32A0D9361002AF767 /* ViewController.swift in Sources */,
 				A12BF1D52A0D9CB8002AF767 /* TodoTableViewController.swift in Sources */,
 				A12BF1BF2A0D9361002AF767 /* AppDelegate.swift in Sources */,
